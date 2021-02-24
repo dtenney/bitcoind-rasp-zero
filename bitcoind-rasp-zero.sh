@@ -22,13 +22,13 @@ git clone https://github.com/bitcoin/bitcoin.git
 cd bitcoin
 
 # Run autogen and configure
-echo 'Running autogen.sh'
+echo 'Running autogen.sh.. This is going to take awhile.. Feel free to come back later.'
 ./autogen.sh
 echo 'Running configure without wallet'
 ./configure --enable-upnp-default --disable-wallet
 
 # make and install
-echo 'Running make and make install..'
+echo 'Running make and make install.. This will take a awhile.. Might want to go get a coffee.'
 make
 sudo make install
 
