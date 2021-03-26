@@ -25,7 +25,7 @@ cd bitcoin
 echo 'Running autogen.sh.. This is going to take awhile.. Feel free to come back later.'
 ./autogen.sh
 echo 'Running configure without wallet'
-./configure --enable-upnp-default --disable-wallet
+./configure --enable-upnp-default --disable-wallet --with-boost-libdir=/usr/lib/arm-linux-gnueabih
 
 # make and install
 echo 'Running make and make install.. This will take a awhile.. Might want to go get a coffee.'
@@ -45,7 +45,7 @@ echo 'Downloading default configuration file..'
 wget https://raw.githubusercontent.com/bitcoin/bitcoin/master/share/examples/bitcoin.conf
 sudo cp bitcoin.conf /var/lib/bitcoin.conf
 echo 'Adjusting prune value to fit on a 16GB sdcard..'
-sudo sed -i 's/\#prune=550/prune=12000/' /var/lib/bitcoin
+sudo sed -i 's/\#prune=550/prune=12000/' /var/lib/bitcoin/bitcoin.conf
 
 # Run bitcoin node
 echo 'Starting bitcoin node..'
